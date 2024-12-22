@@ -5,10 +5,10 @@
 #define GOL_WORLD_SIZE 10
 
 static void gol_display_terminal(const struct GOL *g){
-    const enum GOL_STATE **matrix = gol_get_world(g);
+    const GOL_STATE_t *matrix = gol_get_world(g);
     for(unsigned int i = 0; i < g->size; i++){
         for(unsigned int j = 0; j < g->size; j++)
-            printf("%s ", ((matrix[i][j] == GOL_ALIVE) ? "*" : "_"));
+            printf("%s ", ((matrix[i * g->size + j] == (GOL_STATE_t)GOL_ALIVE) ? "*" : "_"));
         printf("\n");
     }
     printf("#########################\n");

@@ -1,3 +1,5 @@
+.vscode
+
 lib/out
 sdlView/out
 terminalView/out
